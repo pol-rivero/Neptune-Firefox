@@ -1119,11 +1119,6 @@ textarea:not(#select-translations-panel-text-area) {
 				display: revert !important;
 			}
 
-			tab:hover .tab-content:not(#tabbrowser-tabs[orient="vertical"]:not([expanded]) .tab-content) > &:not([pinned]),
-			tab[soundplaying]:hover .tab-content > & > :is(.tab-icon-image, .tab-throbber) {
-				display: none;
-			}
-
 			> .tab-icon-image {
 				fill: var(--toolbarbutton-icon-fill) !important;
 
@@ -1186,7 +1181,7 @@ textarea:not(#select-translations-panel-text-area) {
 			}
 
 			tab:hover &:not([pinned]) {
-				display: revert !important;
+				display: none !important;
 				animation: tab-hover-preview-fadein 0.3s ease-in-out both;
 			}
 
