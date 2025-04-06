@@ -2,11 +2,12 @@
 @import "neptune/colors/dark.css";
 
 :root {
-	--theme-browser-toolbox-padding: 12px;	/*This value will affect the height of the toolbar.*/
+	--theme-browser-toolbox-padding: 6px;	/*This value will affect the height of the toolbar.*/
+	--left-window-controls-padding: 0px;
 	--theme-tab-width: 150px;
 	--theme-tab-max-width: 200px;
 	--theme-urlbar-focus-width: 35em;
-	--toolbar-start-end-padding: 10px !important;
+	--toolbar-start-end-padding: 4px !important;
 	--space-xsmall: 0.25rem !important;
 	--urlbar-min-height: 28px !important;
 	--urlbarView-small-font-size: 0.84em !important;
@@ -115,7 +116,7 @@
 		grid-area: 1 / 1 / span 1 / span 1;
 		width: fit-content;
 		background-color: transparent !important;
-		padding: var(--theme-browser-toolbox-padding) 0 var(--theme-browser-toolbox-padding) calc(92px - var(--toolbar-start-end-padding) / 2) !important;
+		padding: var(--theme-browser-toolbox-padding) 0 var(--theme-browser-toolbox-padding) calc(var(--left-window-controls-padding) - var(--toolbar-start-end-padding) / 2) !important;
 		border: none !important;
 
 		:root[inFullscreen] & {
@@ -2316,6 +2317,14 @@ panelview .toolbarbutton-1,
 	@media not -moz-pref("sidebar.verticalTabs") {
 		position: absolute;
 		inset-inline-end: calc(var(--tab-min-height) + 2 * var(--toolbar-start-end-padding) + var(--toolbarbutton-outer-padding) - var(--toolbar-start-end-padding) / 2);
+	}
+}
+
+#tabs-newtab-button, #new-tab-button {
+	@media not -moz-pref("sidebar.verticalTabs") {
+		#tabbrowser-tabs:has(tab:nth-of-type(2)) & {
+			inset-inline-end: calc(-95px + var(--tab-min-height) + 2 * var(--toolbar-start-end-padding) + var(--toolbarbutton-outer-padding) - var(--toolbar-start-end-padding) / 2);
+		}
 	}
 }
 
