@@ -4,6 +4,7 @@
 :root {
 	--theme-browser-toolbox-padding: 6px;	/*This value will affect the height of the toolbar.*/
 	--left-window-controls-padding: 0px;
+	--new-tab-button-position-adjustment: -100px;
 	--theme-tab-width: 150px;
 	--theme-tab-max-width: 200px;
 	--theme-urlbar-focus-width: 35em;
@@ -31,7 +32,8 @@
 	--panel-separator-margin: var(--panel-separator-margin-vertical) var(--panel-separator-margin-horizontal) !important;
 	--arrowpanel-menuitem-margin-inline: 5px !important;
 	--arrowpanel-menuitem-padding-inline: 9px !important;
-	--arrowpanel-menuitem-padding-block: 0 !important;
+	--arrowpanel-menuitem-padding-block: 5px !important;
+	--arrowpanel-menuitem-height: 5px !important;
 	--arrowpanel-padding: calc(var(--arrowpanel-menuitem-margin-inline) + var(--arrowpanel-menuitem-padding-inline)) !important;
 	--default-focusring: none !important;
 	--tabpanel-background-color: transparent !important;
@@ -1657,7 +1659,7 @@ toolbarbutton.subviewbutton:not(.all-tabs-secondary-button, .subviewbutton-back,
 
 		> menu,
 		> menuitem {
-			padding-block: 2px !important;
+			padding-block: var(--arrowpanel-menuitem-height) !important;
 			border-radius: var(--arrowpanel-menuitem-border-radius) !important;
 			padding-inline-start: var(--arrowpanel-menuitem-padding-inline) !important;
 
@@ -2323,7 +2325,7 @@ panelview .toolbarbutton-1,
 #tabs-newtab-button, #new-tab-button {
 	@media not -moz-pref("sidebar.verticalTabs") {
 		#tabbrowser-tabs:has(tab:nth-of-type(2)) & {
-			inset-inline-end: calc(-95px + var(--tab-min-height) + 2 * var(--toolbar-start-end-padding) + var(--toolbarbutton-outer-padding) - var(--toolbar-start-end-padding) / 2);
+			inset-inline-end: calc(var(--new-tab-button-position-adjustment) + var(--tab-min-height) + 2 * var(--toolbar-start-end-padding) + var(--toolbarbutton-outer-padding) - var(--toolbar-start-end-padding) / 2);
 		}
 	}
 }

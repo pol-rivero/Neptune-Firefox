@@ -67,13 +67,6 @@
 	--tab-line-hover-color: transparent !important;
 	--default-focusring: none !important;
 	--border-radius-small: 6px !important;
-	--border-radius-large: 12px !important;
-	--font-size-root: 12.5px !important;
-	--font-size-small: 0.96rem !important;
-	--font-size-large: 1.2rem !important;
-	--font-size-xlarge: 1.44rem !important;
-	--font-size-xxlarge: 1.76rem !important;
-	--space-xsmall: 0.32rem !important;
 }
 
 @-moz-document url-prefix(about:), url-prefix("chrome://") {
@@ -300,12 +293,6 @@
 		}
 	}
 
-	treecol:not([hideheader="true"]), .tree-columnpicker-button, .item-box, *:not(#downloadsListBox) > richlistitem:not(dialog richlistitem),
-	select, menulist, textarea, button:not(:has(.page-nav-icon), [is="named-deck-button"], .toggle-button, .reset-button),
-	input:where([type="email"], [type="tel"], [type="text"], [type="password"], [type="url"], [type="number"]) {
-		padding-block: 2px !important;
-	}
-
 	#siteCol, #statusCol,
 	#permissionsBox > richlistitem,
 	:is(#engineList, #blocklistsTree) > treechildren::-moz-tree-row {
@@ -498,11 +485,7 @@
 
 @-moz-document url("about:home"), url("about:newtab"), url("about:welcome"), url("about:privatebrowsing") {
 	body {
-		background: url("neptune/image/Abstract_Dreamscapes_Light.png") center/cover fixed !important;
-
-		@media (prefers-color-scheme: dark) {
-			background: url("neptune/image/Abstract_Dreamscapes_Dark.png") center/cover fixed !important;
-		}
+		background: #2b2a33 !important;
 	}
 
 	.non-collapsible-section {
